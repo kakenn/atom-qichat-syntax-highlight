@@ -1,26 +1,2 @@
 {
-  "context-menu": {
-    "atom-text-editor": [
-      {
-        "label": "Toggle qichat",
-        "command": "qichat:toggle"
-      }
-    ]
-  },
-  "menu": [
-    {
-      "label": "Packages",
-      "submenu": [
-        {
-          "label": "qichat",
-          "submenu": [
-            {
-              "label": "Toggle",
-              "command": "qichat:toggle"
-            }
-          ]
-        }
-      ]
-    }
-  ]
 }

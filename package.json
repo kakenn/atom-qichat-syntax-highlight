@@ -1,16 +1,13 @@
 {
   "name": "qichat",
   "main": "./lib/qichat",
-  "version": "0.0.1",
+  "version": "0.1.1",
   "description": "qichat syntax highlight",
-  "keywords": [
+  "tag": [
     "pepper",
     "qichat"
   ],
-  "activationCommands": {
-    "atom-workspace": "qichat:toggle"
-  },
-  "repository": "https://github.com/atom/qichat",
+  "repository": "https://github.com/kakenn/atom-qichat-syntax-highlight",
   "license": "MIT",
   "engines": {
     "atom": ">=1.0.0 <2.0.0"
