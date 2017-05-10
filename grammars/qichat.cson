@@ -1,0 +1,217 @@
+'scopeName': 'source.qichat'
+'name': 'Qichat'
+'fileTypes': [
+  'top'
+]
+'repository': {
+  'call':
+    {
+      'begin': '(\\^call|\\^pCall|\\^sCall)\\('
+      'end': '\\)(\\))'
+      'captures':
+        0:
+          'name': 'sources'
+        1:
+          'name': 'qichat-2'
+      'patterns': [
+        'match': 'e:[^\\s=]+\\s'
+        'name': 'qichat-5'
+      ]
+      'contentName': 'source'
+    }
+  'comment':
+    {
+      'match': '#.*'
+      'name': 'comment'
+    }
+  'voice':
+    {
+      'match': '\\\\(rspd|vct|pau|RSPD|VCT|PAU)=[0-9]+\\\\'
+      'name': 'qichat-3'
+    }
+  'memory':
+    {
+      'match': '\\$[^\\s=]+'
+      'name': 'qichat-5'
+    }
+  'call':
+    {
+      'begin': '(\\^call|\\^pCall|\\^sCall)\\('
+      'end': '\\)(\\))'
+      'captures':
+        0:
+          'name': 'sources'
+        1:
+          'name': 'qichat-2'
+      'patterns': [
+        'match': 'e:[^\\s=]+\\s'
+        'name': 'qichat-5'
+      ]
+      'contentName': 'source'
+    }
+  'func':
+    {
+      'begin': '(\\^topicTagReactivate|\\^gotoReactivate|\\^mode)\\('
+      'end': '\\)'
+      'name': 'qichat-2'
+      'patterns': [
+        'match': 'e:[^\\s=]+\\s'
+        'name': 'qichat-5'
+      ]
+      'contentName': 'source'
+    }
+  'rand':
+    {
+      'begin': '(\\^rand|\\^first|\\^start)\\s?\\['
+      'end': '(\\]|\\))'
+      'name': 'qichat-2'
+      'patterns': [
+        {
+          'match': '\\$[^\\s=]+'
+          'name': 'qichat-5'
+        }
+        {
+          'include': '#call'
+        }
+        {
+          'include': '#voice'
+        }
+        {
+          'include': '#func'
+        }
+      ]
+      'contentName': 'source'
+    }
+}
+'patterns': [
+  {
+    'include': '#comment'
+  }
+  {
+    'begin': '(\\^call|\\^pCall|\\^sCall)\\('
+    'end': '\\)(\\))'
+    'captures':
+      0:
+        'name': 'sources'
+      1:
+        'name': 'qichat-2'
+    'patterns': [
+      'match': 'e:[^\\s=]+\\s'
+      'name': 'qichat-5'
+    ]
+    'contentName': 'source'
+  }
+  {
+    'match': '(topic|proposal):'
+    'name': 'qichat-1'
+  }
+  {
+    'match': '^(include|language):\\s?.*\\n'
+    'captures':
+      0:
+        'name': 'qichat-2'
+      1:
+        'name': 'qichat-5'
+  }
+  {
+    'match': '^(concept:)\\([^)]+\\)\\s?.*\\n'
+    'captures':
+      0:
+        'name': 'qichat-2'
+      1:
+        'name': 'qichat-5'
+  }
+  {
+    'match': '(%[^\\s%]+?)\\s'
+    'name': 'qichat-4'
+  }
+  {
+    'match': '\\\\(rspd|vct|pau|RSPD|VCT|PAU)=[0-9]+\\\\'
+    'name': 'qichat-3'
+  }
+  {
+    'match': '\\$[^\\s=]+'
+    'name': 'qichat-5'
+  }
+  {
+    'match': '(\\^nextProposal|\\^previousProposal|\\^stayInScope)'
+    'name': 'qichat-2'
+  }
+  {
+    'begin': '(\\^rand|\\^first)\\s?\\['
+    'end': '(\\]|\\))'
+    'name': 'qichat-2'
+    'patterns': [
+      {
+        'include': 'rand'
+      }
+      {
+        'match': '\\$[^\\s=]+'
+        'name': 'qichat-5'
+      }
+      {
+        'match': '\\\\(rspd|vct|pau|RSPD|VCT|PAU)=[0-9]+\\\\'
+        'name': 'qichat-3'
+      }
+      {
+        'begin': '(\\^call|\\^pCall|\\^sCall)\\('
+        'end': '\\)(\\))'
+        'captures':
+          0:
+            'name': 'sources'
+          1:
+            'name': 'qichat-2'
+        'patterns': [
+          'match': 'e:[^\\s=]+\\s'
+          'name': 'qichat-5'
+        ]
+        'contentName': 'source'
+      }
+      {
+        'begin': '(\\^topicTagReactivate|\\^gotoReactivate|\\^mode|\\^start)\\('
+        'end': '\\)'
+        'name': 'qichat-2'
+        'patterns': [
+          'match': 'e:[^\\s=]+\\s'
+          'name': 'qichat-5'
+        ]
+        'contentName': 'source'
+      }
+    ]
+    'contentName': 'source'
+  }
+  {
+    'begin': '(\\^call|\\^pCall|\\^sCall)\\('
+    'end': '\\)(\\))'
+    'captures':
+      0:
+        'name': 'sources'
+      1:
+        'name': 'qichat-2'
+    'patterns': [
+      'match': 'e:[^\\s=]+\\s'
+      'name': 'qichat-5'
+    ]
+    'contentName': 'source'
+  }
+  {
+    'begin': '(\\^topicTagReactivate|\\^gotoReactivate|\\^mode|\\^start)\\('
+    'end': '\\)'
+    'name': 'qichat-2'
+    'patterns': [
+      'match': 'e:[^\\s=]+\\s'
+      'name': 'qichat-5'
+    ]
+    'contentName': 'source'
+  }
+  {
+    'begin': 'u[1-3]?:\\('
+    'end': '\\)'
+    'name': 'qichat-5'
+    'patterns': [
+      'match': 'e:[^\\s=]+\\s'
+      'name': 'qichat-5'
+    ]
+    'contentName': 'source'
+  }
+]
