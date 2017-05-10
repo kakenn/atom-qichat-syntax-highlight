@@ -1,7 +1,7 @@
 {
   "name": "qichat",
   "main": "./lib/qichat",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "qichat syntax highlight",
   "tag": [
     "pepper",
@@ -12,6 +12,5 @@
   "engines": {
     "atom": ">=1.0.0 <2.0.0"
   },
-  "dependencies": {
-  }
+  "dependencies": {}
 }
