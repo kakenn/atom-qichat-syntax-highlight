@@ -16,7 +16,7 @@
     }
   'memory':
     {
-      'match': '\\$[^\\s=]+'
+      'match': '\\$[^\\s="]+'
       'name': 'qichat-5'
     }
   'concept':
@@ -31,29 +31,18 @@
     }
   'call':
     {
-      'begin': '(\\^call|\\^pCall|\\^sCall)(\\()'
-      'end': '\\)(\\))'
-      'captures':
-        1:
-          'name': 'qichat-2'
-        2:
-          'name': 'qichat-2'
-        3:
-          'name': 'qichat-2'
-      'contentName': 'source'
+      'match': '(\\^call|\\^pCall|\\^sCall)(\\().+?\\)(\\))'
+      'name': 'qichat-2'
     }
   'func':
     {
-      'begin': '\\^[\\w]+\\('
-      'end': '\\)'
+      'match': '\\^[\\w]+\\(.+?\\)'
       'name': 'qichat-2'
-      'contentName': 'source'
     }
   'action':
     {
       'match': '\\^[\\w]+'
       'name': 'qichat-2'
-      'contentName': 'source'
     }
   'u-kakko1':
     {
